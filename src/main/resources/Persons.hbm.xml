@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping xmlns="http://www.hibernate.org/xsd/hibernate-mapping">
+
+    <class name="ru.dbobject.Persons" table="Persons">
+        <id name="P_Id" column="P_Id"/>
+        <property name="P_FirstName" column="P_FirstName"/>
+        <property name="P_LastName" column="P_LastName"/>
+        <property name="P_Age" column="P_Age"/>
+        <property name="P_Gender" column="P_Gender"/>
+        <property name="P_City" column="P_City"/>
+    </class>
+</hibernate-mapping>
