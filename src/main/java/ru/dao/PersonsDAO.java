@@ -33,8 +33,13 @@ public class PersonsDAO implements DAO<Persons, String> {
 
     @Override
     public void update(Persons persons) {
-
+        try (Session session = factory.openSession()) {
+            session.beginTransaction();
+            session.update(persons);
+            session.getTransaction().commit();
+        }
     }
+
 
     @Override
     public void delete(Persons persons) {
