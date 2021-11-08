@@ -22,10 +22,13 @@ public class PersonsDAO implements DAO<Persons, String> {
             session.getTransaction().commit();
         }
     }
-
+    //Чтение строки из таблице Persons.
     @Override
-    public Persons read(@NotNull final String pers) {
-    return null;
+    public Persons read(@NotNull final int p_id) {
+        try (final Session session = factory.openSession()) {
+            final Persons result = session.get(Persons.class, p_id);
+            return result != null ? result : new Persons();
+        }
     }
 
     @Override
