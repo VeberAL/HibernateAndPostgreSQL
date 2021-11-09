@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping xmlns="http://www.hibernate.org/xsd/hibernate-mapping">
+
+    <class name="ru.dbobject.Employee" table="Employee">
+        <id name="E_Id" type = "int" column="E_Id">
+<!--            генератор со статегией "идентичный", сам генерирует id-->
+                <generator class="identity"/>
+        </id>
+        <property name="E_Title" column="E_Title"/>
+        <property name="E_Salary" column="E_Salary"/>
+    </class>
+</hibernate-mapping>

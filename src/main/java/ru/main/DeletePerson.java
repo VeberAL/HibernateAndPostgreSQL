@@ -19,7 +19,7 @@ public class DeletePerson {
             final Persons result = personsDAO.read(5);
             System.out.println("Read : " + result);
             System.out.println();
-            personsDAO.delete(new Persons(5,"Ben","Kenobi",50,"man","Mos-Eisli"));
+            personsDAO.delete(new Persons(5,"Ben","Kenobi",50,"man","Mos-Eisli",3));
             System.out.println("Удалена строка : " + personsDAO.read(5));
         } finally {
             if (factory != null) {
