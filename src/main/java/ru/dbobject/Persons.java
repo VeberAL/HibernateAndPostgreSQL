@@ -13,4 +13,5 @@ public class Persons{
     private int P_Age;
     private String P_Gender;
     private String P_City;
+    private int E_Id;
 }
