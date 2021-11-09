@@ -1,9 +1,11 @@
 package ru.dao;
 
+import com.sun.istack.NotNull;
+import ru.dbobject.Persons;
+
 public interface DAO<Entity, Key> {
-    //CRUT-операции
     void create(Entity entity);
-    Entity read(int key);
+    Entity read(Key key);
     void update(Entity entity);
     void delete(Entity entity);
 }

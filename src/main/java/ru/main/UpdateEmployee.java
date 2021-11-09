@@ -3,21 +3,22 @@ package ru.main;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 import ru.dao.DAO;
-import ru.dao.PersonsDAO;
-import ru.dbobject.Persons;
+import ru.dao.EmployeeDAO;
+import ru.dbobject.Employee;
 
-public class UpdatePerson {
+
+public class UpdateEmployee {
     public static void main(String[] args) {
         SessionFactory factory = null;
         try {
             factory = new Configuration().configure().buildSessionFactory();
-            DAO<Persons, String> personsStringDAO = new PersonsDAO(factory);
+            DAO<Employee, String> employeeStringDAO = new EmployeeDAO(factory);
             //Считываем строку с id=5 и устанавливаем сеттером новое значение поля P_FirstName, затем обновляем с помощью update
-            final Persons result = personsStringDAO.read(5);
-            result.setP_FirstName("Obe One");
-            personsStringDAO.update(result);
+            final Employee result = employeeStringDAO.read("3");
+            result.setE_Salary("1900");
+            employeeStringDAO.update(result);
 
-            final Persons update = personsStringDAO.read(5);
+            final Employee update = employeeStringDAO.read("3");
             System.out.println("Изменено : " + update);
             System.out.println();}
               finally{

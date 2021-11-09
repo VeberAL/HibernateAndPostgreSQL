@@ -3,17 +3,18 @@ package ru.main;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 import ru.dao.DAO;
-import ru.dao.PersonsDAO;
-import ru.dbobject.Persons;
+import ru.dao.EmployeeDAO;
+import ru.dbobject.Employee;
 
-public class ReadPerson {
+
+public class ReadEmployee {
     public static void main(String[] args) {
         SessionFactory factory = null;
         try {
             factory = new Configuration().configure().buildSessionFactory();
-            DAO<Persons, String> personsStringDAO = new PersonsDAO(factory);
+            DAO<Employee, String> employeeStringDAO = new EmployeeDAO(factory);
 
-            final Persons result = personsStringDAO.read(5);
+            final Employee result = employeeStringDAO.read("5");
             System.out.println("Найдена строка : " + result);
             System.out.println();
             }
