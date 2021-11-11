@@ -1,0 +1,15 @@
+CREATE TABLE Employees (
+    E_Id serial primary key,
+    E_Title varchar(50) not null,
+    E_Salary integer not null);
+INSERT INTO Employees (E_Title,E_Salary) values ('Junior Engineer',1200);
+CREATE TABLE Person(
+                       P_Id serial primary key,
+                       P_FirstName varchar(50) not null,
+                       P_LastName varchar(50) not null,
+                       P_Age integer not null,
+                       P_Gender varchar(7),
+                       P_City varchar(50),
+                       E_Id integer not null,
+                       foreign key (E_Id) references Employees (E_Id));
+INSERT INTO Person (P_FirstName, P_LastName, P_Age, P_Gender, P_City, E_Id) values ('Alex','Veber',28,'man','Baykonur',1);

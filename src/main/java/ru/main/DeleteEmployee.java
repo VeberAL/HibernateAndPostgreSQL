@@ -3,10 +3,8 @@ package ru.main;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 import ru.dao.DAO;
-import ru.dao.EmployeeDAO;
-import ru.dao.PersonsDAO;
-import ru.dbobject.Employee;
-import ru.dbobject.Persons;
+import ru.dao.EmployeesDAO;
+import ru.dbobject.Employees;
 
 public class DeleteEmployee {
     public static void main(String[] args) {
@@ -16,12 +14,12 @@ public class DeleteEmployee {
         try {
 
             factory = new Configuration().configure().buildSessionFactory();
-            DAO<Employee, String> employeeStringDAO = new EmployeeDAO(factory);
+            DAO<Employees, String> employeeStringDAO = new EmployeesDAO(factory);
 
-            final Employee result = employeeStringDAO.read("4");
+            final Employees result = employeeStringDAO.read("4");
             System.out.println("Read : " + result);
             System.out.println();
-            employeeStringDAO.delete(new Employee(4,"Senior Ingineer","2000"));
+            employeeStringDAO.delete(new Employees(4,"Senior Ingineer","2000"));
             System.out.println("Удалена строка : " + employeeStringDAO.read("4"));
         } finally {
             if (factory != null) {

@@ -5,7 +5,7 @@
 
 <hibernate-mapping xmlns="http://www.hibernate.org/xsd/hibernate-mapping">
 
-    <class name="ru.dbobject.Employee" table="Employee">
+    <class name="ru.dbobject.Employees" table="Employees">
         <id name="E_Id" type = "int" column="E_Id">
 <!--            генератор со статегией "идентичный", сам генерирует id-->
                 <generator class="identity"/>

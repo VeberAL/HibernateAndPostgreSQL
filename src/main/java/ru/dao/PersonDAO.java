@@ -1,51 +1,58 @@
 package ru.dao;
 import com.sun.istack.NotNull;
+import org.hibernate.Hibernate;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import ru.dbobject.Employee;
-import ru.dbobject.Persons;
+import ru.dbobject.Person;
 
-public class EmployeeDAO implements DAO<Employee, String> {
+public class PersonDAO implements DAO<Person, Integer> {
 
     //Соединение с БД.
     private final SessionFactory factory;
 
-    public EmployeeDAO(@NotNull final SessionFactory factory) {
+    public PersonDAO(@NotNull final SessionFactory factory) {
         this.factory = factory;
     }
 
-
+    //Создание новой строки в таблице Persons.
     @Override
-    public void create(@NotNull final Employee employee) {
+    public void create(@NotNull final Person person) {
         try (final Session session = factory.openSession()) {
             session.beginTransaction();
-            session.save(employee);
+            session.save(person);
             session.getTransaction().commit();
         }
     }
 
     @Override
-    public Employee read(@NotNull final String E_Id) {
+    public Person read(@NotNull final Integer p_id) {
         try (final Session session = factory.openSession()) {
-            final Employee result = session.get(Employee.class, E_Id);
-            return result != null ? result : new Employee();
+            final Person result = session.get(Person.class, p_id);
+            if (result != null) {
+                Hibernate.initialize(result.getEmployees());
+            }
+
+            return result;
         }
     }
 
+
+
     @Override
-    public void update(Employee employee) {
+    public void update(@NotNull final Person person) {
         try (Session session = factory.openSession()) {
             session.beginTransaction();
-            session.update(employee);
+            session.update(person);
             session.getTransaction().commit();
         }
     }
 
+
     @Override
-    public void delete(Employee employee) {
+    public void delete(@NotNull final Person person) {
         try (Session session = factory.openSession()) {
             session.beginTransaction();
-            session.delete(employee);
+            session.delete(person);
             session.getTransaction().commit();
         }
     }

@@ -6,7 +6,7 @@ import lombok.*;
 @EqualsAndHashCode
 @NoArgsConstructor
 @AllArgsConstructor
-public class Employee {
+public class Employees {
     private int E_Id;
     private String E_Title;
     private String E_Salary;

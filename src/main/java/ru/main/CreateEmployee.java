@@ -3,8 +3,8 @@ package ru.main;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 import ru.dao.DAO;
-import ru.dao.EmployeeDAO;
-import ru.dbobject.Employee;
+import ru.dao.EmployeesDAO;
+import ru.dbobject.Employees;
 
 
 public class CreateEmployee {
@@ -12,13 +12,13 @@ public class CreateEmployee {
         SessionFactory factory = null;
         try {
             factory = new Configuration().configure().buildSessionFactory();
-            DAO<Employee, String> employeeStringDAO = new EmployeeDAO(factory);
+            DAO<Employees, String> employeeStringDAO = new EmployeesDAO(factory);
 
-            final Employee employee = new Employee();
-            employee.setE_Id(4);
-            employee.setE_Title("Senior Ingineer");
-            employee.setE_Salary("2000");
-            employeeStringDAO.create(employee);
+            final Employees employees = new Employees();
+            employees.setE_Id(4);
+            employees.setE_Title("Senior Ingineer");
+            employees.setE_Salary("2000");
+            employeeStringDAO.create(employees);
         } finally {
             if (factory != null) {
                 factory.close();
