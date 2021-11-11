@@ -15,7 +15,7 @@ public class UpdateEmployee {
             DAO<Employees, String> employeeStringDAO = new EmployeesDAO(factory);
             //Считываем строку с id=5 и устанавливаем сеттером новое значение поля P_FirstName, затем обновляем с помощью update
             final Employees result = employeeStringDAO.read("3");
-            result.setE_Salary("1900");
+            result.setE_Salary(1900);
             employeeStringDAO.update(result);
 
             final Employees update = employeeStringDAO.read("3");

@@ -16,8 +16,8 @@ public class CreateEmployee {
 
             final Employees employees = new Employees();
             employees.setE_Id(4);
-            employees.setE_Title("Senior Ingineer");
-            employees.setE_Salary("2000");
+            employees.setE_Title("Senior Engineer");
+            employees.setE_Salary(2000);
             employeeStringDAO.create(employees);
         } finally {
             if (factory != null) {
