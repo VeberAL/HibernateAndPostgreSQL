@@ -1,4 +1,4 @@
-package ru.dbobject;
+package ru.dbobject.OneToMany;
 import lombok.*;
 
 @Data

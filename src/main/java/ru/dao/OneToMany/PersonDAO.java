@@ -1,9 +1,10 @@
-package ru.dao;
+package ru.dao.OneToMany;
 import com.sun.istack.NotNull;
 import org.hibernate.Hibernate;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import ru.dbobject.Person;
+import ru.dao.DAO;
+import ru.dbobject.OneToMany.Person;
 
 public class PersonDAO implements DAO<Person, Integer> {
 

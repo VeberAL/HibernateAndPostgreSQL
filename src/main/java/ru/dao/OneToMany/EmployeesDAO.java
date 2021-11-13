@@ -1,8 +1,9 @@
-package ru.dao;
+package ru.dao.OneToMany;
 import com.sun.istack.NotNull;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import ru.dbobject.Employees;
+import ru.dao.DAO;
+import ru.dbobject.OneToMany.Employees;
 
 public class EmployeesDAO implements DAO<Employees, String> {
 

@@ -3,8 +3,8 @@ package ru.main;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 import ru.dao.DAO;
-import ru.dao.EmployeesDAO;
-import ru.dbobject.Employees;
+import ru.dao.OneToMany.EmployeesDAO;
+import ru.dbobject.OneToMany.Employees;
 
 
 public class UpdateEmployee {

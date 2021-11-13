@@ -5,7 +5,7 @@
 
 <hibernate-mapping xmlns="http://www.hibernate.org/xsd/hibernate-mapping">
 
-    <class name="ru.dbobject.Person" table="Person">
+    <class name="ru.dbobject.OneToMany.Person" table="Person">
         <id name="P_Id" column="P_Id">
               <generator class="identity"/>
         </id>
@@ -16,7 +16,7 @@
         <property name="P_City" column="P_City"/>
 <!--        Прикрепляем сущность людей к специальностям-->
         <many-to-one name="Employees" column="E_Id"
-        class="ru.dbobject.Employees"
+        class="ru.dbobject.OneToMany.Employees"
         cascade="save-update"/>
     </class>
 </hibernate-mapping>
