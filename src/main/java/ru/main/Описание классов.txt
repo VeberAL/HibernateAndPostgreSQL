@@ -1,0 +1,14 @@
+OneTable CRUD:
+CreateEmployee
+ReadEmployee
+UpdateEmployee
+DeleteEmployee
+
+OneToMany CRUD:
+CreatePersonAndEmployee
+ReadPersonAndEmployee
+UpdatePersonAndEmployee
+DeletePersonAndEmployee
+
+ManyToMany CRUD:
+
