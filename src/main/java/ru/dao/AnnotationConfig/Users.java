@@ -1,7 +1,11 @@
 package ru.dao.AnnotationConfig;
 
+import lombok.*;
+
 import javax.persistence.*;
 import java.io.Serializable;
+
+@Data
 @Entity
 @Table(name="users")
 public class Users implements Serializable {
@@ -17,5 +21,11 @@ public class Users implements Serializable {
 
     @Column(name = "name", length = 50)
     private String Name;
+
+    @ManyToOne
+    @JoinColumn(name="role_id")
+    private Role role;
+
+    public Users(){}
 
 }
