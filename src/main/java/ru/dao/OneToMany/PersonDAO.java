@@ -1,10 +1,12 @@
 package ru.dao.OneToMany;
-import com.sun.istack.NotNull;
+//mport com.sun.istack.NotNull;
 import org.hibernate.Hibernate;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import ru.dao.DAO;
 import ru.dbobject.OneToMany.Person;
+
+import javax.validation.constraints.NotNull;
 
 public class PersonDAO implements DAO<Person, Integer> {
 

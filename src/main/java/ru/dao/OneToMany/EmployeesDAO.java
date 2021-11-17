@@ -1,9 +1,11 @@
 package ru.dao.OneToMany;
-import com.sun.istack.NotNull;
+//import com.sun.istack.NotNull;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import ru.dao.DAO;
 import ru.dbobject.OneToMany.Employees;
+
+import javax.validation.constraints.NotNull;
 
 public class EmployeesDAO implements DAO<Employees, String> {
 
